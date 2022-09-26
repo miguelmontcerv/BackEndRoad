@@ -1,13 +1,25 @@
-public class Ejercicio3 {
+public class Ejercicio4 {
 	public static void main(String[] args){
 		Trabajador persona = new Trabajador();
 
-		System.out.println("Datos de persona: "+persona.nombre+" "+persona.edad+" "+persona.telefono+" "+persona.salario);
+		System.out.println("Datos de persona: "+persona.getNombre()+" "+persona.getEdad()+" "+persona.getTelefono()+" "+persona.getSalario());
+		
 		persona.setNombre("Miguel Chino");
 		persona.setEdad(22);
 		persona.setTelefono("6034234");
+		persona.setSalario(540);
 
-		System.out.println("Datos de persona: "+persona.nombre+" "+persona.edad+" "+persona.telefono);
+		System.out.println("Datos de persona: "+persona.getNombre()+" "+persona.getEdad()+" "+persona.getTelefono()+" "+persona.getSalario());
+
+		Cliente cliente = new Cliente();
+		System.out.println("Datos de persona: "+cliente.getNombre()+" "+cliente.getEdad()+" "+cliente.getTelefono()+" "+cliente.getCredito());
+		
+		cliente.setNombre("Miki Angel");
+		cliente.setEdad(23);
+		cliente.setTelefono("55324634");
+		cliente.setCredito(460);		
+		
+		System.out.println("Datos de persona: "+cliente.getNombre()+" "+cliente.getEdad()+" "+cliente.getTelefono()+" "+cliente.getCredito());
 	}
 }
 
@@ -60,6 +72,23 @@ class Trabajador extends Persona{
 
 	public int getSalario(){
 		return this.salario;
+	}
+
+}
+
+class Cliente extends Persona{
+	int credito;
+
+	public Cliente(){
+		this.credito = 0;
+	}
+
+	public void setCredito(int credito){
+		this.credito = credito;	
+	}
+
+	public int getCredito(){
+		return this.credito;
 	}
 
 }
