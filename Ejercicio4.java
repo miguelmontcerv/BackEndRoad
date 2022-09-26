@@ -1,13 +1,13 @@
 public class Ejercicio3 {
 	public static void main(String[] args){
-		Persona persona = new Persona();
+		Trabajador persona = new Trabajador();
 
-		System.out.println("Datos de persona: "+persona.getNombre()+" "+persona.getEdad()+" "+persona.getTelefono());
+		System.out.println("Datos de persona: "+persona.nombre+" "+persona.edad+" "+persona.telefono+" "+persona.salario);
 		persona.setNombre("Miguel Chino");
 		persona.setEdad(22);
 		persona.setTelefono("6034234");
 
-		System.out.println("Datos de persona: "+persona.getNombre()+" "+persona.getEdad()+" "+persona.getTelefono());
+		System.out.println("Datos de persona: "+persona.nombre+" "+persona.edad+" "+persona.telefono);
 	}
 }
 
@@ -45,4 +45,21 @@ class Persona{
 	public String getTelefono(){
 		return this.telefono;
 	}
+}
+
+class Trabajador extends Persona{
+	int salario;
+
+	public Trabajador(){
+		this.salario = 0; 
+	}
+
+	public void setSalario(int salario){
+		this.salario = salario;
+	}
+
+	public int getSalario(){
+		return this.salario;
+	}
+
 }
